@@ -19,13 +19,13 @@ const genAI = new GenAI.GoogleGenerativeAI(SECRETS.GEMINI_API_KEY);
 async function run() {
   // For text-only input, use the gemini-pro model
   const model = genAI.getGenerativeModel({
-    model: "gemini-pro",
+    model: "gemini-2.5-flash",
     generationConfig,
   });
 
   // Write your prompt here
   const prompt =
-    "generate a web development content, tips and tricks or something new or some rant or some advice as a tweet, it should not be vague and should be unique; under 280 characters and should be plain text, you can use emojis";
+    "Generate a content to warm up the audience before launching a meme token called Fart. It should not be vague and should be unique; under 280 characters and should be plain text, you can use emojis";
 
   const result = await model.generateContent(prompt);
   const response = await result.response;
